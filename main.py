@@ -6,7 +6,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-key = os.getenv('TRANLSLATE_KEY')
+key = os.getenv('TRANSLATE_KEY')
+
+if not key:
+    raise Exception('set key first!')
 
 
 headers = {
@@ -89,7 +92,7 @@ def base64_to_audio(base64str: str):
 
 
 if __name__ == '__main__':
-    text = "Base64 编码或解码的结果"
+    text = "今天天气怎么样？"
     translated_content = translate(
         text=text, target_language="en-US", display_language="zh-CN")
     print('translated text: ', translated_content)
