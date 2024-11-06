@@ -90,8 +90,8 @@ def base64_to_audio(base64str: str):
 
 if __name__ == '__main__':
     text = "Base64 编码或解码的结果"
-    translated_content = translate(text=text, target_language="en-US",
-                                   display_language="zh-CN")
+    translated_content = translate(
+        text=text, target_language="en-US", display_language="zh-CN")
     print('translated text: ', translated_content)
     if translate:
         audio_base64str = get_audio_info(
